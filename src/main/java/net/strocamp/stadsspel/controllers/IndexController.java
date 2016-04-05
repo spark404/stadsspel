@@ -13,11 +13,10 @@ public class IndexController {
 
     @RequestMapping("/")
     ModelAndView index() {
-
         List<Ranking> rankings = getRankings();
 
         ModelAndView modelAndView = new ModelAndView("index");
-        modelAndView.addObject("ranking", rankings);
+        modelAndView.addObject("rankings", rankings);
         return modelAndView;
     }
 

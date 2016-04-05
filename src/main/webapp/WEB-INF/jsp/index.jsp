@@ -52,11 +52,11 @@
 	  <tr><th class="col-md-1"></th><th class="col-md-8" >Groep</th><th class="col-md-1">Score</th></tr>
 	</thead>
 	<tbody>
-	<c:forEach items="ranking" var="element">
+	<c:forEach items="${rankings}" var="element">
       <tr>
         <td class="align-center">${element.getRank()}</td>
         <td>${element.getGroupName()}</td>
-        <tdclass="align-right">&euro;$nbsp;${element.getMoney()}</td>
+        <td class="align-right">&euro;&nbsp;${element.getMoney()}</td>
       </tr>
     </c:forEach>
 	</tbody>
