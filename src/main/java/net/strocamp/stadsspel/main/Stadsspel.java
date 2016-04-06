@@ -6,7 +6,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan(basePackages = "net.strocamp.stadsspel.controllers")
+@ComponentScan(basePackages = {"net.strocamp.stadsspel.controllers", "net.strocamp.stadsspel.providers"})
 @EnableAutoConfiguration
 public class Stadsspel extends SpringBootServletInitializer {
 
