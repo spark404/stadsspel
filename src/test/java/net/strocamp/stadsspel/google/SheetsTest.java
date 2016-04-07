@@ -8,6 +8,7 @@ import com.google.gdata.data.spreadsheet.SpreadsheetEntry;
 import com.google.gdata.data.spreadsheet.SpreadsheetFeed;
 import com.google.gdata.data.spreadsheet.WorksheetEntry;
 import com.google.gdata.data.spreadsheet.WorksheetFeed;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +26,7 @@ public class SheetsTest {
     private static final Logger LOG = LoggerFactory.getLogger(SheetsTest.class);
 
     @Test
+    @Ignore
     public void testSheets() throws Exception {
 
         SpreadsheetService service = new SpreadsheetService(
