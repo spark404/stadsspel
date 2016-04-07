@@ -38,37 +38,16 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Scores</a></li>
+            <li><a href="/">Scores</a></li>
             <li><a href="/events">Berichten</a></li>
-            <li><a href="/overig">Overig</a></li>
+            <li class="active"><a href="/overig">Overig</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
-      <h1>Scores</h1>
-      <jsp:useBean id="now" class="java.util.Date" />
-      <table class="table table-responsive score">
-        <thead>
-	      <tr>
-	        <th class="col-md-1 align-center">#</th>
-	        <th class="col-md-8" >Groep</th>
-	        <th class="col-md-1 align-right">Score</th>
-	      </tr>
-	  </thead>
-	<tbody>
-	<c:forEach items="${rankings}" var="element">
-      <tr>
-        <td class="align-center">${element.getRank()}</td>
-        <td>${element.getGroupName()}</td>
-        <td class="align-right">&euro;&nbsp;${element.getMoney()}</td>
-      </tr>
-    </c:forEach>
-	</tbody>
-      </table>
-            <p>Laatst bijgewerkt op <fmt:formatDate type="both" value="${now}" /></p>
-
+      <h1>Overige</h1>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
