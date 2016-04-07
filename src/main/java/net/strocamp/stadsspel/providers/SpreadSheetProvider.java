@@ -12,6 +12,8 @@ import com.google.gdata.util.ServiceException;
 import net.strocamp.stadsspel.domain.Ranking;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
@@ -33,10 +35,11 @@ public class SpreadSheetProvider {
 
     private SpreadsheetService service;
 
-    public SpreadSheetProvider() throws IOException {
+    @Autowired
+    public SpreadSheetProvider(@Value("${google.keyfile}") String keyfile) throws IOException {
         service = new SpreadsheetService("google-spreadsheet");
 
-        File file = new File("/Users/htrippaers/IdeaProjects/stadsspel/google-servicekey.json");
+        File file = new File(keyfile);
         InputStream is = new FileInputStream(file);
 
         GoogleCredential credential = GoogleCredential
