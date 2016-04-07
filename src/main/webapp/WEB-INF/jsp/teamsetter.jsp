@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
@@ -48,14 +49,21 @@
 
     <div class="container">
       <h1>Team Instelling</h1>
-     <form action="/teamconfig" method="POST">
+      <c:if test="${not empty error}">
+      <div class="alert alert-danger" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Oeps..</span>
+        ${error}
+      </div>
+      </c:if>
+     <form:form action="/teamconfig" method="POST" modelAttribute="teamInput">
        <fieldset class="form-group">
          <label for="teamcode">Email address</label>
-         <input type="text" class="form-control" id="teamcode" placeholder="Voer je team code in">
+         <form:input type="text" class="form-control" path="teamCode" placeholder="Voer je team code in"/>
          <small class="text-muted">De team code kan je opvragen bij de spelleiding</small>
        </fieldset>
        <button type="submit" class="btn btn-primary">En door..</button>
-    </form>
+    </form:form>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

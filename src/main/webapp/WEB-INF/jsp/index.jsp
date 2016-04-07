@@ -59,9 +59,18 @@
 	  </thead>
 	<tbody>
 	<c:forEach items="${rankings}" var="element">
-      <tr>
+	  <c:choose>
+        <c:when test="${element.groupName == group.groupname}">
+          <c:set value="success" var="cssClass"></c:set>
+        </c:when>
+        <c:otherwise>
+          <c:set value="" var="cssClass"></c:set>
+        </c:otherwise>
+      </c:choose>
+      <tr class="${cssClass}">
         <td class="align-center">${element.getRank()}</td>
-        <td>${element.getGroupName()}</td>
+
+        <td>${element.groupName}</td>
         <td class="align-right">&euro;&nbsp;${element.getMoney()}</td>
       </tr>
     </c:forEach>

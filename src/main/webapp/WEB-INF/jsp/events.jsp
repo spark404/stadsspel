@@ -47,7 +47,7 @@
     </nav>
 
     <div class="container">
-      <h1>Berichten</h1>
+      <h1>Berichten voor ${group.groupname}</h1>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
