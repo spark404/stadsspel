@@ -21,9 +21,11 @@ public class ActionLoggingFilter extends OncePerRequestFilter {
 
         Cookie[] cookies = req.getCookies();
         String teamcode = null;
-        for (Cookie cookie : cookies) {
-            if ("team".equals(cookie.getName())) {
-                teamcode = cookie.getValue();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if ("team".equals(cookie.getName())) {
+                    teamcode = cookie.getValue();
+                }
             }
         }
         LOG.info("{} - Action {}{}", req.getHeader("X-Forwarded-For"), req.getRequestURI(), teamcode != null ? " "+teamcode : "");

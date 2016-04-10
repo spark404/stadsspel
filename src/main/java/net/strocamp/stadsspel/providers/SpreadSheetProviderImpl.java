@@ -26,8 +26,8 @@ import java.net.URL;
 import java.util.*;
 
 @Component
-public class SpreadSheetProvider {
-    private static final Logger LOG = LoggerFactory.getLogger(SpreadSheetProvider.class);
+public class SpreadSheetProviderImpl implements GameDataProvider {
+    private static final Logger LOG = LoggerFactory.getLogger(SpreadSheetProviderImpl.class);
 
     private static final String STADSSPEL_SHEET =
             "https://spreadsheets.google.com/feeds/spreadsheets/1YBWQfmIn0DVqLHuXdKsPRwc31wtUXdbdC8gE3xutQqA";
@@ -40,7 +40,7 @@ public class SpreadSheetProvider {
     private SpreadsheetService service;
 
     @Autowired
-    public SpreadSheetProvider(@Value("${google.keyfile}") String keyfile) throws IOException {
+    public SpreadSheetProviderImpl(@Value("${google.keyfile}") String keyfile) throws IOException {
         service = new SpreadsheetService("google-spreadsheet");
 
         File file = new File(keyfile);
@@ -54,6 +54,7 @@ public class SpreadSheetProvider {
         service.setOAuth2Credentials(credential);
     }
 
+    @Override
     public List<Ranking> loadRanking() throws Exception {
         SpreadsheetEntry rankingSheet = getSpreadsheetEntry();
 
@@ -72,6 +73,7 @@ public class SpreadSheetProvider {
         return rankings;
     }
 
+    @Override
     public Map<String, Group> loadGroups() throws Exception {
         SpreadsheetEntry spreadsheetEntry = getSpreadsheetEntry();
         WorksheetEntry worksheetEntry = getWorksheetEntry(spreadsheetEntry, GROUPS_WORKSHEET);
@@ -87,6 +89,7 @@ public class SpreadSheetProvider {
         return groups;
     }
 
+    @Override
     public List<Event> loadEvents() throws Exception {
         SpreadsheetEntry spreadsheetEntry = getSpreadsheetEntry();
         WorksheetEntry worksheetEntry = getWorksheetEntry(spreadsheetEntry, EVENTS_WORKSHEET);
