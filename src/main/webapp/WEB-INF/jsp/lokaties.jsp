@@ -38,9 +38,9 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Scores</a></li>
+            <li><a href="/">Scores</a></li>
             <li><a href="/events">Berichten</a></li>
-            <li><a href="/locations">Lokaties</a></li>
+            <li class="active" ><a href="/locations">Lokaties</a></li>
             <li><a href="/overig">Overig</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -48,20 +48,19 @@
     </nav>
 
     <div class="container">
-      <h2>Scores</h2>
+      <h2>Lokaties</h2>
       <jsp:useBean id="now" class="java.util.Date" />
       <table class="table table-responsive score">
         <thead>
 	      <tr>
-	        <th class="col-md-1 align-center">#</th>
-	        <th class="col-md-8" >Groep</th>
-	        <th class="col-md-1 align-right">Score</th>
+	        <th class="col-md-4">Naam</th>
+	        <th class="col-md-1 align-right">Waarde</th>
 	      </tr>
 	  </thead>
 	<tbody>
-	<c:forEach items="${rankings}" var="element">
+	<c:forEach items="${locations}" var="location">
 	  <c:choose>
-        <c:when test="${element.groupName == group.groupname}">
+        <c:when test="${not empty location.ownerGroupName && location.ownerGroupName == group.groupname}">
           <c:set value="success" var="cssClass"></c:set>
         </c:when>
         <c:otherwise>
@@ -69,15 +68,12 @@
         </c:otherwise>
       </c:choose>
       <tr class="${cssClass}">
-        <td class="align-center">${element.getRank()}</td>
-
-        <td>${element.groupName}</td>
-        <td class="align-right">&euro;&nbsp;${element.getMoney()}</td>
+        <td>${location.name}</td>
+        <td class="align-right">&euro;&nbsp;${location.value}</td>
       </tr>
     </c:forEach>
 	</tbody>
       </table>
-            <p>Laatst bijgewerkt op <fmt:formatDate type="both" value="${now}" /></p>
 
     </div>
 

@@ -34,12 +34,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Stadspel 2016</a>
+          <a class="navbar-brand" href="/">Stadspel 2016</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="/">Scores</a></li>
             <li class="active"><a href="/events">Berichten</a></li>
+            <li><a href="/locations">Lokaties</a></li>
             <li><a href="/overig">Overig</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -48,6 +49,9 @@
 
     <div class="container">
       <h2>Berichten voor ${group.groupname}</h2>
+      <c:if test="${empty events}">
+        <p class="text-info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Nog geen berichten, tijd om wat te gaan doen!</p>
+      </c:if>
       <c:forEach items="${events}" var="event">
           <c:choose>
             <c:when test="${event.event == 'bezoek' && event.groupName == group.groupname}">

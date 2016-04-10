@@ -2,6 +2,7 @@ package net.strocamp.stadsspel.providers;
 
 import net.strocamp.stadsspel.domain.Event;
 import net.strocamp.stadsspel.domain.Group;
+import net.strocamp.stadsspel.domain.Location;
 import net.strocamp.stadsspel.domain.Ranking;
 
 import java.util.List;
@@ -13,4 +14,6 @@ public interface GameDataProvider {
     Map<String, Group> loadGroups() throws Exception;
 
     List<Event> loadEvents() throws Exception;
+
+    List<Location> loadLocations() throws Exception;
 }

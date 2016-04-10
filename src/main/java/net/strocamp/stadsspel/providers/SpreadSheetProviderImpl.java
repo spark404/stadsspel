@@ -2,14 +2,11 @@ package net.strocamp.stadsspel.providers;
 
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.gdata.client.spreadsheet.SpreadsheetService;
-import com.google.gdata.data.spreadsheet.ListEntry;
-import com.google.gdata.data.spreadsheet.ListFeed;
-import com.google.gdata.data.spreadsheet.SpreadsheetEntry;
-import com.google.gdata.data.spreadsheet.WorksheetEntry;
-import com.google.gdata.data.spreadsheet.WorksheetFeed;
+import com.google.gdata.data.spreadsheet.*;
 import com.google.gdata.util.ServiceException;
 import net.strocamp.stadsspel.domain.Event;
 import net.strocamp.stadsspel.domain.Group;
+import net.strocamp.stadsspel.domain.Location;
 import net.strocamp.stadsspel.domain.Ranking;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -108,6 +105,29 @@ public class SpreadSheetProviderImpl implements GameDataProvider {
             events.add(event);
         }
         return events;
+    }
+
+    @Override
+    public List<Location> loadLocations() throws Exception {
+        SpreadsheetEntry spreadsheetEntry = getSpreadsheetEntry();
+        WorksheetEntry worksheetEntry = getWorksheetEntry(spreadsheetEntry, LOCATIONS_WORKSHEET);
+
+        URL eventList = worksheetEntry.getListFeedUrl();
+        ListFeed listFeed = service.getFeed(eventList, ListFeed.class);
+
+        List<Location> locations = new ArrayList<>();
+        for (ListEntry listEntry: listFeed.getEntries()) {
+            Location location = new Location();
+            location.setCode(listEntry.getCustomElements().getValue("locatiecode"));
+            location.setReference(listEntry.getCustomElements().getValue("referentie"));
+            String naam = listEntry.getCustomElements().getValue("naam");
+            location.setName((naam == null || naam.isEmpty()) ? location.getCode() : naam);
+            location.setValue(Integer.parseInt(listEntry.getCustomElements().getValue("waarde")));
+            location.setOwnerGroupName(listEntry.getCustomElements().getValue("eigenaar"));
+            locations.add(location);
+        }
+
+        return locations;
     }
 
     private SpreadsheetEntry getSpreadsheetEntry() throws IOException, ServiceException {

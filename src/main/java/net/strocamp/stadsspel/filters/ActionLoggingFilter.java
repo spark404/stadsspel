@@ -5,7 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import javax.servlet.*;
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -28,7 +29,9 @@ public class ActionLoggingFilter extends OncePerRequestFilter {
                 }
             }
         }
-        LOG.info("{} - Action {}{}", req.getHeader("X-Forwarded-For"), req.getRequestURI(), teamcode != null ? " "+teamcode : "");
+        if (!req.getRequestURI().startsWith("/css") && !req.getRequestURI().startsWith("/js") && !req.getRequestURI().startsWith("/fonts")) {
+            LOG.info("{} - Action {}{}", req.getHeader("X-Forwarded-For"), req.getRequestURI(), teamcode != null ? " - "+teamcode : " - anonymous");
+        }
 
         chain.doFilter(req, res);
     }
