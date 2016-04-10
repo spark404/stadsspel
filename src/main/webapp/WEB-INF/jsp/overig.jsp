@@ -49,6 +49,12 @@
 
     <div class="container">
       <h2>Overige</h2>
+      <h3>Spelregels in het kort</h3>
+      <p>Op de kaart zie je de mogelijke lokaties die je kan claimen. Als je op een lokatie bent aangekomen neem via whatsapp contact op met de spelleiding,
+      de spelleiding kan vragen om aanvullend bewijs dat je op de locatie bent. Bijvoorbeeld een foto van de lokatie en je team genoten.</p>
+      <p>Op een lokatie zijn er verschillende mogelijkheden, als de lokatie al geclaimed is door een andere groep betaal je en bedrag om daar te mogen zijn.
+      Als de lokatie nog niet geclaimed krijg je dat van de spel leiding te horen eventueel met een aanvullende opdracht om de lokatie te claimen.
+      Als er geen opdracht is of je voert de opdracht goed uit is de lokatie van jullie. Gefeliciteerd!</p>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
