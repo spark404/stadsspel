@@ -38,23 +38,28 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/">Scores</a></li>
-            <li><a href="/events">Berichten</a></li>
-            <li><a href="/locations">Lokaties</a></li>
-            <li class="active"><a href="/overig">Overig</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-sort-by-order" aria-hidden="true"></span> Scores</a></li>
+            <li><a href="/events"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Berichten</a></li>
+            <li><a href="/locations"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Lokaties</a></li>
+            <li class="active"><a href="/overig"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"> Overig</a></li>
+
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
-      <h2>Overige</h2>
+      <h2><span class="glyphicon glyphicon-info-sign" aria-hidden="true"> Overige</h2>
       <h3>Spelregels in het kort</h3>
       <p>Op de kaart zie je de mogelijke lokaties die je kan claimen. Als je op een lokatie bent aangekomen neem via whatsapp contact op met de spelleiding,
       de spelleiding kan vragen om aanvullend bewijs dat je op de locatie bent. Bijvoorbeeld een foto van de lokatie en je team genoten.</p>
       <p>Op een lokatie zijn er verschillende mogelijkheden, als de lokatie al geclaimed is door een andere groep betaal je en bedrag om daar te mogen zijn.
       Als de lokatie nog niet geclaimed krijg je dat van de spel leiding te horen eventueel met een aanvullende opdracht om de lokatie te claimen.
       Als er geen opdracht is of je voert de opdracht goed uit is de lokatie van jullie. Gefeliciteerd!</p>
+      <h3>Tips<h3>
+      <ul>
+        <li>Als je gezien wordt vlak bij een lokatie is de kans groot dat het andere groepje die lokatie overslaat!</li>
+      </ul>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

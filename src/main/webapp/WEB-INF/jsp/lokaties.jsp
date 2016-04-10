@@ -38,17 +38,17 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/">Scores</a></li>
-            <li><a href="/events">Berichten</a></li>
-            <li class="active" ><a href="/locations">Lokaties</a></li>
-            <li><a href="/overig">Overig</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-sort-by-order" aria-hidden="true"></span> Scores</a></li>
+            <li><a href="/events"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Berichten</a></li>
+            <li class="active"><a href="/locations"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Lokaties</a></li>
+            <li><a href="/overig"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"> Overig</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
-      <h2>Lokaties</h2>
+      <h2><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Lokaties</h2>
       <jsp:useBean id="now" class="java.util.Date" />
       <table class="table table-responsive score">
         <thead>
@@ -69,7 +69,7 @@
       </c:choose>
       <tr class="${cssClass}">
         <td>${location.name}</td>
-        <td class="align-right">&euro;&nbsp;${location.value}</td>
+        <td class="align-right"><fmt:formatNumber value="${location.value}" type="currency" currencyCode="EUR" maxFractionDigits="0"/></td>
       </tr>
     </c:forEach>
 	</tbody>
