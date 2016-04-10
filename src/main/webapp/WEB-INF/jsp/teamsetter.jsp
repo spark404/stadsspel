@@ -48,7 +48,7 @@
     </nav>
 
     <div class="container">
-      <h1>Team Instelling</h1>
+      <h2>Team Instelling</h2>
       <c:if test="${not empty error}">
       <div class="alert alert-danger" role="alert">
         <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
@@ -58,7 +58,7 @@
       </c:if>
      <form:form action="/teamconfig" method="POST" modelAttribute="teamInput">
        <fieldset class="form-group">
-         <label for="teamcode">Email address</label>
+         <label for="teamcode">Team code</label>
          <form:input type="text" class="form-control" path="teamCode" placeholder="Voer je team code in"/>
          <small class="text-muted">De team code kan je opvragen bij de spelleiding</small>
        </fieldset>

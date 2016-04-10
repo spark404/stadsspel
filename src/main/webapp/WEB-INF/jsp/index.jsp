@@ -47,7 +47,7 @@
     </nav>
 
     <div class="container">
-      <h1>Scores</h1>
+      <h2>Scores</h2>
       <jsp:useBean id="now" class="java.util.Date" />
       <table class="table table-responsive score">
         <thead>

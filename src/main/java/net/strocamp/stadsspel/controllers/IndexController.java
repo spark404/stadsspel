@@ -1,10 +1,10 @@
 package net.strocamp.stadsspel.controllers;
 
+import net.strocamp.stadsspel.domain.Event;
 import net.strocamp.stadsspel.domain.Group;
 import net.strocamp.stadsspel.domain.Ranking;
 import net.strocamp.stadsspel.domain.TeamInput;
 import net.strocamp.stadsspel.providers.SpreadSheetProvider;
-import org.apache.http.HttpResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,8 +50,27 @@ public class IndexController {
         }
 
         Map<String,Group> groups = spreadSheetProvider.loadGroups();
+        if (!groups.containsKey(team)) {
+            ModelAndView modelAndView = new ModelAndView("teamsetter");
+            modelAndView.addObject(new TeamInput());
+            return modelAndView;
+        }
+
+        Group group = groups.get(team);
+        List<Event> events = spreadSheetProvider.loadEvents();
+        List<Event> filteredEvents = new ArrayList<>();
+        for (Event event : events) {
+            if (group.getGroupname().equals(event.getGroupName())) {
+                filteredEvents.add(event);
+            }
+            if (event.getOtherGroupName() != null && group.getGroupname().equals(event.getOtherGroupName())) {
+                filteredEvents.add(event);
+            }
+        }
+
         ModelAndView modelAndView = new ModelAndView("events");
         modelAndView.addObject("group", groups.get(team));
+        modelAndView.addObject("events", filteredEvents);
         return modelAndView;
     }
 
@@ -76,7 +95,7 @@ public class IndexController {
 
         response.addCookie(new Cookie("team", teamCode));
 
-        ModelAndView modelAndView = new ModelAndView("events");
+        ModelAndView modelAndView = new ModelAndView("redirect:events");
         modelAndView.addObject("group", groups.get(teamCode));
         return modelAndView;
     }

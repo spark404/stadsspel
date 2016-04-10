@@ -47,7 +47,7 @@
     </nav>
 
     <div class="container">
-      <h1>Overige</h1>
+      <h2>Overige</h2>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

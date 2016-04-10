@@ -5,10 +5,10 @@ import com.google.gdata.client.spreadsheet.SpreadsheetService;
 import com.google.gdata.data.spreadsheet.ListEntry;
 import com.google.gdata.data.spreadsheet.ListFeed;
 import com.google.gdata.data.spreadsheet.SpreadsheetEntry;
-import com.google.gdata.data.spreadsheet.SpreadsheetFeed;
 import com.google.gdata.data.spreadsheet.WorksheetEntry;
 import com.google.gdata.data.spreadsheet.WorksheetFeed;
 import com.google.gdata.util.ServiceException;
+import net.strocamp.stadsspel.domain.Event;
 import net.strocamp.stadsspel.domain.Group;
 import net.strocamp.stadsspel.domain.Ranking;
 import org.slf4j.Logger;
@@ -32,6 +32,11 @@ public class SpreadSheetProvider {
     private static final String STADSSPEL_SHEET =
             "https://spreadsheets.google.com/feeds/spreadsheets/1YBWQfmIn0DVqLHuXdKsPRwc31wtUXdbdC8gE3xutQqA";
 
+    public static final String RANKING_WORKSHEET = "Ranking";
+    public static final String GROUPS_WORKSHEET = "Groepen";
+    public static final String EVENTS_WORKSHEET = "Extrapunten";
+    public static final String LOCATIONS_WORKSHEET = "Locaties";
+
     private SpreadsheetService service;
 
     @Autowired
@@ -52,7 +57,7 @@ public class SpreadSheetProvider {
     public List<Ranking> loadRanking() throws Exception {
         SpreadsheetEntry rankingSheet = getSpreadsheetEntry();
 
-        String worksheetName = "Ranking";
+        String worksheetName = RANKING_WORKSHEET;
         WorksheetEntry rankingEntry = getWorksheetEntry(rankingSheet, worksheetName);
 
         URL rankingList = new URI(rankingEntry.getListFeedUrl().toString() + "?reverse=true&orderby=column:stand").toURL();
@@ -69,7 +74,7 @@ public class SpreadSheetProvider {
 
     public Map<String, Group> loadGroups() throws Exception {
         SpreadsheetEntry spreadsheetEntry = getSpreadsheetEntry();
-        WorksheetEntry worksheetEntry = getWorksheetEntry(spreadsheetEntry, "Groepen");
+        WorksheetEntry worksheetEntry = getWorksheetEntry(spreadsheetEntry, GROUPS_WORKSHEET);
 
         URL rankingList = worksheetEntry.getListFeedUrl();
         ListFeed listFeed = service.getFeed(rankingList, ListFeed.class);
@@ -80,6 +85,26 @@ public class SpreadSheetProvider {
             groups.put(teamcode, new Group(listEntry.getTitle().getPlainText(), teamcode));
         }
         return groups;
+    }
+
+    public List<Event> loadEvents() throws Exception {
+        SpreadsheetEntry spreadsheetEntry = getSpreadsheetEntry();
+        WorksheetEntry worksheetEntry = getWorksheetEntry(spreadsheetEntry, EVENTS_WORKSHEET);
+
+        URL eventList = new URI(worksheetEntry.getListFeedUrl().toString() + "?reverse=false").toURL();
+        ListFeed listFeed = service.getFeed(eventList, ListFeed.class);
+
+        List<Event> events = new ArrayList<>();
+        for (ListEntry listEntry: listFeed.getEntries()) {
+            Event event = new Event();
+            event.setEvent(listEntry.getCustomElements().getValue("waarom"));
+            event.setGroupName(listEntry.getCustomElements().getValue("wie"));
+            event.setAmount(listEntry.getCustomElements().getValue("hoeveel"));
+            event.setOtherGroupName(listEntry.getCustomElements().getValue("vanwie"));
+            event.setLocationCode(listEntry.getCustomElements().getValue("waar"));
+            events.add(event);
+        }
+        return events;
     }
 
     private SpreadsheetEntry getSpreadsheetEntry() throws IOException, ServiceException {

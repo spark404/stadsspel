@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<html lang="en">
+<html lang="nl">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -47,7 +47,26 @@
     </nav>
 
     <div class="container">
-      <h1>Berichten voor ${group.groupname}</h1>
+      <h2>Berichten voor ${group.groupname}</h2>
+      <c:forEach items="${events}" var="event">
+          <c:choose>
+            <c:when test="${event.event == 'bezoek' && event.groupName == group.groupname}">
+                <p class="text-success"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <fmt:formatNumber value="${event.amount}" type="currency" currencyCode="EUR" maxFractionDigits="0"/>, Jullie hebben bezoek gehad van ${event.otherGroupName} op jullie locatie ${event.locationCode}</p>
+            </c:when>
+            <c:when test="${event.event == 'bezoek' && event.otherGroupName == group.groupname}">
+                <p class="text-danger"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <fmt:formatNumber value="${-event.amount}" type="currency" currencyCode="EUR" maxFractionDigits="0"/>, Jullie zijn op bezoek geweest bij ${event.otherGroupName} op hun locatie ${event.locationCode}</p>
+            </c:when>
+            <c:when test="${event.event == 'kanskaart'}">
+                <p class="text-info"><span class="glyphicon glyphicon-gift" aria-hidden="true"></span> <fmt:formatNumber value="${event.amount}" type="currency" currencyCode="EUR" maxFractionDigits="0"/>, Jullie hebben een kans kaart getrokken met een geld bedrag</p>
+            </c:when>
+            <c:when test="${event.event == 'boete'}">
+                <p class="text-danger"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> <fmt:formatNumber value="${event.amount}" type="currency" currencyCode="EUR" maxFractionDigits="0"/>, Jullie hebben een boete gehad van de spelleiding</p>
+            </c:when>
+            <c:otherwise>
+                <p class="text-info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Er is een ${event.event} bericht voor jullie, neem contact op met de spelleiding</p>
+            </c:otherwise>
+          </c:choose>
+      </c:forEach>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
