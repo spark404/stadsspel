@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -63,11 +65,11 @@
        <ol>
         <li>De spelleiding kan vragen om aanvullend bewijs dat je op de straat bent. Bijvoorbeeld een foto van die lokatie (in veel gevallen is dat een gedicht of een bord van Kwink kinderopvang).</li>
         <li>Als de straat nog niet geclaimed is krijg je van de spelleiding een opdracht, een vraagt of een kanskaart.</li>
-         <li><ol>
+         <ol>
            <li>Als je de opdracht goed uitvoert is de straat van jullie. Gefeliciteerd!</li>
            <li>Als je de vraag goed beantwoordt is de straat van jullie, Gefeliciteerd!</li>
            <li>Als je en kanskaart krijgt moet je maar afwachten, we hebben zowel positieve als negatieve kanskaarten.</li>
-         </ol></li>
+         </ol>
          <li>Als de straat al geclaimed is door een andere groep betaal je een bedrag om daar te zijn aan die groep. Heeft de andere groep de hele locatie in bezit betaal je dubbel!</li>
          </ol>
 

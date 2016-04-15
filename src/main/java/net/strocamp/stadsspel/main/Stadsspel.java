@@ -9,7 +9,6 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackages = {"net.strocamp.stadsspel.controllers", "net.strocamp.stadsspel.providers", "net.strocamp.stadsspel.filters"})
 @EnableAutoConfiguration
 public class Stadsspel extends SpringBootServletInitializer {
-
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
         return builder.sources(Stadsspel.class);
