@@ -41,7 +41,7 @@
             <li><a href="/"><span class="glyphicon glyphicon-sort-by-order" aria-hidden="true"></span> Scores</a></li>
             <li><a href="/events"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Berichten</a></li>
             <li class="active"><a href="/locations"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Lokaties</a></li>
-            <li><a href="/overig"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"> Overig</a></li>
+            <li><a href="/overig"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"> Spelregels</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

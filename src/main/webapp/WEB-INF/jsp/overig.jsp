@@ -41,7 +41,7 @@
             <li><a href="/"><span class="glyphicon glyphicon-sort-by-order" aria-hidden="true"></span> Scores</a></li>
             <li><a href="/events"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Berichten</a></li>
             <li><a href="/locations"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Lokaties</a></li>
-            <li class="active"><a href="/overig"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"> Overig</a></li>
+            <li class="active"><a href="/overig"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"> Spelregels</a></li>
 
           </ul>
         </div><!--/.nav-collapse -->
@@ -49,17 +49,42 @@
     </nav>
 
     <div class="container">
-      <h2><span class="glyphicon glyphicon-info-sign" aria-hidden="true"> Overige</h2>
+      <h2><span class="glyphicon glyphicon-info-sign" aria-hidden="true"> Spelregels</h2>
       <h3>Spelregels in het kort</h3>
-      <p>Op de kaart zie je de mogelijke lokaties die je kan claimen. Als je op een lokatie bent aangekomen neem via whatsapp contact op met de spelleiding,
-      de spelleiding kan vragen om aanvullend bewijs dat je op de locatie bent. Bijvoorbeeld een foto van de lokatie en je team genoten.</p>
-      <p>Op een lokatie zijn er verschillende mogelijkheden, als de lokatie al geclaimed is door een andere groep betaal je en bedrag om daar te mogen zijn.
-      Als de lokatie nog niet geclaimed krijg je dat van de spel leiding te horen eventueel met een aanvullende opdracht om de lokatie te claimen.
-      Als er geen opdracht is of je voert de opdracht goed uit is de lokatie van jullie. Gefeliciteerd!</p>
-      <h3>Tips<h3>
-      <ul>
-        <li>Als je gezien wordt vlak bij een lokatie is de kans groot dat het andere groepje die lokatie overslaat!</li>
-      </ul>
+       <p>Het doel van dit spel is zoveel mogelijk geld te verdienen. Je kan geld verdienen door straten te claimen en door te zorgen dat andere groepen
+       ook op jouw straten terecht komen. De regels zijn afgeleid van het bekende monopoly, maar dan toch weer een beetje anders.
+       Hieronder vind je de belangrijkste regels. Bij twijfel over een regel kan je altijd contact opnemen met de spelleiding.</p>
+
+       <p>Bij de start van het spel krijg je een kaart, (Als je nu een stuk papaier in handen hebt, kijk even op de andere kant.)
+       Op de kaart zie je de mogelijke straten staan die je kan claimen. De straten zijn gegroepeerd in locaties vernoemd naar locaties
+       van een bekend evenement in Houten. Elke straat heeft ook een bedrag, dit bedrag krijg je als je de straat claimt.</p>
+
+       <p>Om een straat te claimen moet je fysiek naar het punt toe dat op de kaart staat aangegeven. Als je denkt dat je dichtbij genoeg bent om de straat te kunnen claimen neem je contact op met de spelleiding:<p>
+       <ol>
+        <li>De spelleiding kan vragen om aanvullend bewijs dat je op de straat bent. Bijvoorbeeld een foto van die lokatie (in veel gevallen is dat een gedicht of een bord van Kwink kinderopvang).</li>
+        <li>Als de straat nog niet geclaimed is krijg je van de spelleiding een opdracht, een vraagt of een kanskaart.</li>
+         <li><ol>
+           <li>Als je de opdracht goed uitvoert is de straat van jullie. Gefeliciteerd!</li>
+           <li>Als je de vraag goed beantwoordt is de straat van jullie, Gefeliciteerd!</li>
+           <li>Als je en kanskaart krijgt moet je maar afwachten, we hebben zowel positieve als negatieve kanskaarten.</li>
+         </ol></li>
+         <li>Als de straat al geclaimed is door een andere groep betaal je een bedrag om daar te zijn aan die groep. Heeft de andere groep de hele locatie in bezit betaal je dubbel!</li>
+         </ol>
+
+      <p>Je kan een locatie niet twee keer achter elkaar "proberen", lukt het niet om in één keer de straat te claimen dan moet je eerst een andere straat bezoeken voor je het nog een keer kan proberen.</p>
+
+        <p>Om een lokatie compleet te maken mag je straten met andere groepen ruilen. Dit doe je eenvoudig weg door een berichtje te sturen van de ruil naar de spelleiding samen met een
+        foto waar beide groepen compleet op staan en elkaar de handen schudden.</p>
+
+        <p>Een actueel score overzicht is via internet op te vragen op de website http://city.strocamp.net. Wij werken dit bij met de berichten die we ontvangen van de groepjes en hier kan je
+        zelf zien wat je huidige score is, welke straten je geclaimed hebt en/of andere groepn jouw straten hebben bezocht. Hiervoor is wel een teamcode nodig, deze code krijg je bij de
+        voorbereiding van het spel en kan je op de berichten pagina invoeren.</p>
+
+        <p>De winaar is het groepje dat om 16:00 nederlandse zomertijd met de hoogste score bij de spelleiding staat.</p>
+
+        <p>Let op, hou regelmatig contact met de spelleiding om te voorkomen dat je een boete krijgt voor onachtzaamheid!</p>
+
+        <p>De spelleiding is bereikbaar op whatsapp en fysiek te vinden op J.G. Sandbrinkstraat 3 (Eetcafe 't Witte Paard). Mocht onze locatie door omstandigheden moeten wijzigen dan laten we dit via whatsapp tijdig weten.</p>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
