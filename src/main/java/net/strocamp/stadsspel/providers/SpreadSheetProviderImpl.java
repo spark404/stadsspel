@@ -124,6 +124,7 @@ public class SpreadSheetProviderImpl implements GameDataProvider {
             location.setName((naam == null || naam.isEmpty()) ? location.getCode() : naam);
             location.setValue(Integer.parseInt(listEntry.getCustomElements().getValue("waarde")));
             location.setOwnerGroupName(listEntry.getCustomElements().getValue("eigenaar"));
+            location.setRentValue(Integer.parseInt(listEntry.getCustomElements().getValue("huurprijs")));
             locations.add(location);
         }
 

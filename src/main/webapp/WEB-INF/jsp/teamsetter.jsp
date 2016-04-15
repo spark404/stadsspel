@@ -51,7 +51,7 @@
     </nav>
 
     <div class="container">
-      <h2><span class="glyphicon glyphicon-cog" aria-hidden="true">Team Instelling</h2>
+      <h2><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Team Instelling</h2>
       <c:if test="${not empty error}">
       <div class="alert alert-danger" role="alert">
         <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>

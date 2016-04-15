@@ -57,6 +57,7 @@
 	      <tr>
 	        <th class="col-md-4">Naam</th>
 	        <th class="col-md-1 align-right">Waarde</th>
+	        <th class="col-md-1 align-right">Bezoekprijs</th>
 	      </tr>
 	  </thead>
 	<tbody>
@@ -72,10 +73,14 @@
       <tr class="${cssClass}">
         <td>${location.name}</td>
         <td class="align-right"><fmt:formatNumber value="${location.value}" type="currency" currencyCode="EUR" maxFractionDigits="0"/></td>
+        <td class="align-right"><fmt:formatNumber value="${location.rentValue}" type="currency" currencyCode="EUR" maxFractionDigits="0"/></td>
       </tr>
     </c:forEach>
 	</tbody>
       </table>
+
+      <div class="alert alert-info" role="alert"> <strong>Let op!</strong> De bezoekprijs verdubbeld als je de hele locatie in bezit hebt.
+       Voor stations geld dat de bezoekprijs verhoogt met een kwart van de waarde per station dat je in bezit hebt. </div>
 
     </div>
 

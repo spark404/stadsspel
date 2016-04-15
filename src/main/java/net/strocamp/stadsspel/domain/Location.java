@@ -5,6 +5,7 @@ public class Location {
     private String reference;
     private String name;
     private int value;
+    private int rentValue;
     private String ownerGroupName;
 
     public Location() {
@@ -48,5 +49,13 @@ public class Location {
 
     public void setOwnerGroupName(String ownerGroupName) {
         this.ownerGroupName = ownerGroupName;
+    }
+
+    public int getRentValue() {
+        return rentValue;
+    }
+
+    public void setRentValue(int rentValue) {
+        this.rentValue = rentValue;
     }
 }

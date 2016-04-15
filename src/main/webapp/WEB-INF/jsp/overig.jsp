@@ -51,7 +51,7 @@
     </nav>
 
     <div class="container">
-      <h2><span class="glyphicon glyphicon-info-sign" aria-hidden="true"> Spelregels</h2>
+      <h2><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Spelregels</h2>
       <h3>Spelregels in het kort</h3>
        <p>Het doel van dit spel is zoveel mogelijk geld te verdienen. Je kan geld verdienen door straten te claimen en door te zorgen dat andere groepen
        ook op jouw straten terecht komen. De regels zijn afgeleid van het bekende monopoly, maar dan toch weer een beetje anders.
